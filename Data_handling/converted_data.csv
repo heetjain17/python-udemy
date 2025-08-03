@@ -1,0 +1,4 @@
+id,name,email,loaction,is_active
+101,Jake,jake@mail.com,New York City,True
+102,Dexter,dex@mail.com,Miami,False
+101,Walter,walter@mail.com,Albuquerque,False
