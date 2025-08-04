@@ -1,6 +1,24 @@
-from datetime import datetime
-print(datetime.today())
+import json
 
-l = [2,3,45,7,4]
+# A Python dictionary
+python_data = {
+    "name": "John Doe",
+    "age": 30,
+    "isStudent": False,
+    "courses": [
+        {"title": "History", "credits": 3},
+        {"title": "Math", "credits": 4}
+    ]
+}
 
-print(max(l))
+# Encode the Python dictionary into a JSON string
+# "dumps" = DUMP to String
+json_string = json.dumps(python_data)
+
+print("--- Python Dictionary ---")
+print(python_data)
+print(type(python_data))
+
+print("\n--- JSON String ---")
+print(json_string)
+print(type(json_string))
