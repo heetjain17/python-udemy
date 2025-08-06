@@ -1,24 +1,16 @@
 import json
 
-# A Python dictionary
-python_data = {
-    "name": "John Doe",
-    "age": 30,
-    "isStudent": False,
-    "courses": [
-        {"title": "History", "credits": 3},
-        {"title": "Math", "credits": 4}
-    ]
-}
+filename = "data.json"
 
-# Encode the Python dictionary into a JSON string
-# "dumps" = DUMP to String
-json_string = json.dumps(python_data)
+try:
+    # Read the data directly from the file
+    # "load" = LOAD from File
+    with open(filename, 'r', encoding='utf-8') as file:
+        python_data = json.load(file)
 
-print("--- Python Dictionary ---")
-print(python_data)
-print(type(python_data))
+    print("Data loaded from file:")
+    print(python_data)
+    print(f"Name from file: {python_data['name']}")
 
-print("\n--- JSON String ---")
-print(json_string)
-print(type(json_string))
+except FileNotFoundError:
+    print(f"Error: The file '{filename}' was not found.")
